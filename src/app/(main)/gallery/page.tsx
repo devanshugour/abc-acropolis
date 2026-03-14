@@ -99,6 +99,7 @@ export default function GalleryPage() {
             </button>
           ))}
         </div>
+        </div>
       </section>
 
       {/* Lightbox */}

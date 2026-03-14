@@ -24,6 +24,7 @@ export default function DisclaimerPage() {
           the institution directly.
         </p>
         </div>
+        </div>
       </section>
     </div>
   );
