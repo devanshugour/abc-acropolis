@@ -2,7 +2,9 @@
 
 import { useEffect, useState } from "react";
 import Link from "next/link";
+import { useSearchParams } from "next/navigation";
 import type { APIResponse } from "@/types/api";
+import { LayoutGrid, List } from "lucide-react";
 
 interface NewsPost {
   id: string;
@@ -16,6 +18,8 @@ interface NewsPost {
 }
 
 export default function DashboardNewspaperPage() {
+  const searchParams = useSearchParams();
+  const view = searchParams.get("view") === "grid" ? "grid" : "list";
   const [posts, setPosts] = useState<NewsPost[]>([]);
   const [loading, setLoading] = useState(true);
   const [showForm, setShowForm] = useState(false);
@@ -147,10 +151,51 @@ export default function DashboardNewspaperPage() {
         </form>
       )}
 
+      <div className="mt-6 flex flex-wrap items-center justify-between gap-4">
+        <h2 className="text-lg font-semibold text-text-main">All articles</h2>
+        <div className="flex gap-2">
+          <Link
+            href="/dashboard/newspaper"
+            className={`flex items-center gap-1.5 rounded-lg px-3 py-2 text-sm font-medium ${view === "list" ? "bg-accent-primary/20 text-accent-primary" : "text-text-secondary hover:bg-bg-card"}`}
+          >
+            <List className="h-4 w-4" />
+            List
+          </Link>
+          <Link
+            href="/dashboard/newspaper?view=grid"
+            className={`flex items-center gap-1.5 rounded-lg px-3 py-2 text-sm font-medium ${view === "grid" ? "bg-accent-primary/20 text-accent-primary" : "text-text-secondary hover:bg-bg-card"}`}
+          >
+            <LayoutGrid className="h-4 w-4" />
+            Grid
+          </Link>
+        </div>
+      </div>
       {loading ? (
-        <p className="text-text-secondary">Loading...</p>
+        <p className="mt-4 text-text-secondary">Loading...</p>
+      ) : view === "grid" ? (
+        <div className="mt-4 grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
+          {posts.map((p) => (
+            <div key={p.id} className="overflow-hidden rounded-xl border border-accent-secondary/20 bg-bg-card">
+              <div className="aspect-video w-full bg-bg-main">
+                {/* eslint-disable-next-line @next/next/no-img-element */}
+                <img src={p.imageUrl ?? ""} alt="" className="h-full w-full object-cover" />
+              </div>
+              <div className="p-4">
+                <h3 className="font-semibold text-text-main">{p.title}</h3>
+                <p className="mt-1 line-clamp-2 text-sm text-text-secondary">{p.excerpt}</p>
+                <p className="mt-2 text-xs text-text-secondary">
+                  {p.publishedAt ? new Date(p.publishedAt).toLocaleDateString() : "Draft"} · {p.commentCount} comments
+                </p>
+                <div className="mt-3 flex gap-2">
+                  <Link href={`/newspaper/${p.slug}`} className="text-sm text-accent-primary hover:text-accent-light">View</Link>
+                  <button type="button" onClick={() => handleDelete(p.slug)} className="text-sm text-red-400 hover:text-red-300">Delete</button>
+                </div>
+              </div>
+            </div>
+          ))}
+        </div>
       ) : (
-        <div className="space-y-4">
+        <div className="mt-4 space-y-4">
           {posts.map((p) => (
             <div
               key={p.id}
@@ -164,26 +209,15 @@ export default function DashboardNewspaperPage() {
                 </p>
               </div>
               <div className="flex shrink-0 gap-2">
-                <Link
-                  href={`/newspaper/${p.slug}`}
-                  className="rounded-lg border border-accent-secondary/30 px-3 py-1.5 text-sm text-text-main hover:bg-bg-main"
-                >
-                  View
-                </Link>
-                <button
-                  type="button"
-                  onClick={() => handleDelete(p.slug)}
-                  className="rounded-lg border border-red-500/30 px-3 py-1.5 text-sm text-red-400 hover:bg-red-500/10"
-                >
-                  Delete
-                </button>
+                <Link href={`/newspaper/${p.slug}`} className="rounded-lg border border-accent-secondary/30 px-3 py-1.5 text-sm text-text-main hover:bg-bg-main">View</Link>
+                <button type="button" onClick={() => handleDelete(p.slug)} className="rounded-lg border border-red-500/30 px-3 py-1.5 text-sm text-red-400 hover:bg-red-500/10">Delete</button>
               </div>
             </div>
           ))}
-          {posts.length === 0 && !showForm && (
-            <p className="text-text-secondary">No articles yet. Add one above.</p>
-          )}
         </div>
+      )}
+      {!loading && posts.length === 0 && !showForm && (
+        <p className="mt-4 text-text-secondary">No articles yet. Add one above.</p>
       )}
     </div>
   );
