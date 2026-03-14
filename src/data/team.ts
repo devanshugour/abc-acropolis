@@ -1,0 +1,68 @@
+import type { TeamMember } from "@/types";
+
+export const TEAM_DATA: TeamMember[] = [
+  {
+    id: "tm-1",
+    name: "Dr. Priya Sharma",
+    role: "Faculty Advisor",
+    imageUrl: "https://picsum.photos/seed/t1/400/400",
+    bio: "Head of Department, Computer Science. Guides club strategy and academic alignment.",
+    order: 1,
+  },
+  {
+    id: "tm-2",
+    name: "Rahul Verma",
+    role: "President",
+    imageUrl: "https://picsum.photos/seed/t2/400/400",
+    bio: "Final year, CSE. Leads club operations and event coordination.",
+    order: 2,
+  },
+  {
+    id: "tm-3",
+    name: "Anita Singh",
+    role: "Vice President",
+    imageUrl: "https://picsum.photos/seed/t3/400/400",
+    bio: "Final year, IT. Manages members and outreach.",
+    order: 3,
+  },
+  {
+    id: "tm-4",
+    name: "Vikram Patel",
+    role: "Tech Lead",
+    imageUrl: "https://picsum.photos/seed/t4/400/400",
+    bio: "Handles platform, events tech, and digital initiatives.",
+    order: 4,
+  },
+  {
+    id: "tm-5",
+    name: "Kavya Nair",
+    role: "Events Head",
+    imageUrl: "https://picsum.photos/seed/t5/400/400",
+    bio: "Organises fests, workshops, and cultural events.",
+    order: 5,
+  },
+  {
+    id: "tm-6",
+    name: "Arjun Mehta",
+    role: "Content & Media",
+    imageUrl: "https://picsum.photos/seed/t6/400/400",
+    bio: "Newspaper, gallery, and social media.",
+    order: 6,
+  },
+  {
+    id: "tm-7",
+    name: "Sneha Reddy",
+    role: "Treasurer",
+    imageUrl: "https://picsum.photos/seed/t7/400/400",
+    bio: "Finance and sponsorship for club activities.",
+    order: 7,
+  },
+  {
+    id: "tm-8",
+    name: "Rohan Desai",
+    role: "Secretary",
+    imageUrl: "https://picsum.photos/seed/t8/400/400",
+    bio: "Documentation, minutes, and member communications.",
+    order: 8,
+  },
+];
