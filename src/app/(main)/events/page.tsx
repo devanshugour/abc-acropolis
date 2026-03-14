@@ -46,32 +46,25 @@ export default function EventsPage() {
 
   return (
     <div className="min-h-screen">
-      {/* Hero */}
-      <section className="border-b border-accent-secondary/10 bg-bg-card/50 py-16 sm:py-20">
-        <div className="mx-auto max-w-6xl px-4 sm:px-6">
+      <section className="section-pad border-b border-accent-secondary/10 bg-bg-card/40">
+        <div className="page-container">
           <div className="flex flex-col items-start gap-6 sm:flex-row sm:items-center sm:justify-between">
             <div>
-              <h1 className="text-4xl font-bold tracking-tight text-text-main sm:text-5xl">
-                Events
-              </h1>
-              <p className="mt-4 max-w-xl text-lg text-text-secondary">
+              <h1 className="hero-title">Events</h1>
+              <p className="section-subtitle mt-4 max-w-xl">
                 Discover, register, and participate. From tech fests to cultural nights — 
                 find upcoming events and relive past ones with participants and highlights.
               </p>
             </div>
-            <Link
-              href="/join-club"
-              className="shrink-0 rounded-full border border-accent-primary/50 px-5 py-2.5 text-sm font-semibold text-accent-primary transition-colors hover:bg-accent-primary/10"
-            >
+            <Link href="/join-club" className="btn-secondary shrink-0">
               Join club to participate
             </Link>
           </div>
         </div>
       </section>
 
-      {/* Search + Tabs */}
-      <section className="sticky top-16 z-10 border-b border-accent-secondary/10 bg-bg-main/95 py-4 backdrop-blur-sm">
-        <div className="mx-auto max-w-6xl px-4 sm:px-6">
+      <section className="sticky top-16 z-10 border-b border-accent-secondary/10 bg-bg-main/98 py-4 backdrop-blur-md">
+        <div className="page-container">
           <div className="flex flex-col gap-4 sm:flex-row sm:items-center sm:justify-between">
             <div className="relative flex-1 max-w-md">
               <Search className="absolute left-3 top-1/2 h-4 w-4 -translate-y-1/2 text-text-secondary" />
@@ -111,8 +104,8 @@ export default function EventsPage() {
         </div>
       </section>
 
-      {/* Content */}
-      <section className="mx-auto max-w-6xl px-4 py-12 sm:px-6">
+      <section className="section-pad">
+        <div className="page-container">
         {loading && (
           <p className="text-text-secondary">Loading events...</p>
         )}
@@ -128,7 +121,7 @@ export default function EventsPage() {
                 <Link
                   key={evt.id}
                   href={`/events/${evt.slug}`}
-                  className="group overflow-hidden rounded-2xl border border-accent-secondary/20 bg-bg-card transition-colors hover:border-accent-primary/40"
+                  className="card group overflow-hidden"
                 >
                   <div className="aspect-video w-full bg-bg-main">
                     {/* eslint-disable-next-line @next/next/no-img-element */}
@@ -159,7 +152,7 @@ export default function EventsPage() {
               ))}
             </div>
             {displayList.length === 0 && (
-              <div className="rounded-2xl border border-accent-secondary/20 bg-bg-card py-16 text-center">
+              <div className="card py-16 text-center">
                 <Trophy className="mx-auto h-12 w-12 text-text-secondary" />
                 <p className="mt-4 text-text-secondary">
                   {tab === "upcoming"
@@ -170,6 +163,7 @@ export default function EventsPage() {
             )}
           </>
         )}
+        </div>
       </section>
     </div>
   );

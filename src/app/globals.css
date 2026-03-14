@@ -1,19 +1,40 @@
 @import "tailwindcss";
 
-/* ========== Colour palette (Mansi Patidar) – single theme ========== */
+/* ========== Design system — ABC Acropolis (Mansi palette) ========== */
 :root {
-  --bg-main: #000000;           /* Pure Black - Background (Main) */
-  --bg-gradient: #052823;      /* Deep Teal Green - Dark Green Gradient */
-  --accent-primary: #00C4A0;   /* Aqua Teal - Buttons / Glow */
-  --accent-secondary: #008C78; /* Teal Green - Secondary Accent */
-  --accent-light: #41FFD2;     /* Neon Mint - Hover */
-  --bg-card: #141919;          /* Dark Slate - Card Background */
-  --text-main: #FFFFFF;         /* White - Main Text */
-  --text-secondary: #A0AAAA;    /* Cool Gray - Secondary Text */
+  /* Surfaces */
+  --bg-main: #000000;
+  --bg-elevated: #0a0f0f;
+  --bg-card: #111818;
+  --bg-card-hover: #151d1d;
+  --bg-gradient: #052823;
+  /* Accent */
+  --accent-primary: #00C4A0;
+  --accent-secondary: #008C78;
+  --accent-light: #41FFD2;
+  --accent-muted: rgba(0, 196, 160, 0.15);
+  /* Text */
+  --text-main: #ffffff;
+  --text-secondary: #9ca3a8;
+  --text-muted: #6b7280;
+  /* Borders */
+  --border-subtle: rgba(0, 140, 120, 0.12);
+  --border-default: rgba(0, 140, 120, 0.2);
+  --border-strong: rgba(0, 140, 120, 0.35);
+  /* Radius */
+  --radius-sm: 0.5rem;
+  --radius-md: 0.75rem;
+  --radius-lg: 1rem;
+  --radius-xl: 1.25rem;
+  --radius-2xl: 1.5rem;
+  /* Spacing (section) */
+  --section-py: 4rem;
+  --section-py-lg: 5.5rem;
 }
 
 @theme inline {
   --color-bg-main: var(--bg-main);
+  --color-bg-elevated: var(--bg-elevated);
   --color-bg-gradient: var(--bg-gradient);
   --color-bg-card: var(--bg-card);
   --color-accent-primary: var(--accent-primary);
@@ -24,10 +45,11 @@
   --font-sans: var(--font-inter);
 }
 
-/* Semantic utilities */
+/* Legacy compatibility */
 .bg-bg-main { background-color: var(--bg-main); }
 .bg-bg-main\/80 { background-color: color-mix(in srgb, var(--bg-main) 80%, transparent); }
 .bg-bg-gradient { background-color: var(--bg-gradient); }
+.bg-bg-gradient\/20 { background-color: color-mix(in srgb, var(--bg-gradient) 20%, transparent); }
 .bg-bg-gradient\/30 { background-color: color-mix(in srgb, var(--bg-gradient) 30%, transparent); }
 .bg-bg-card { background-color: var(--bg-card); }
 .text-text-main { color: var(--text-main); }
@@ -44,9 +66,9 @@
 .hover\:bg-accent-primary\/30:hover { background-color: color-mix(in srgb, var(--accent-primary) 30%, transparent); }
 .hover\:text-accent-light:hover { color: var(--accent-light); }
 .hover\:text-bg-main:hover { color: var(--bg-main); }
-.border-accent-secondary\/10 { border-color: color-mix(in srgb, var(--accent-secondary) 10%, transparent); }
-.border-accent-secondary\/20 { border-color: color-mix(in srgb, var(--accent-secondary) 20%, transparent); }
-.border-accent-secondary\/50 { border-color: color-mix(in srgb, var(--accent-secondary) 50%, transparent); }
+.border-accent-secondary\/10 { border-color: var(--border-subtle); }
+.border-accent-secondary\/20 { border-color: var(--border-default); }
+.border-accent-secondary\/50 { border-color: var(--border-strong); }
 .border-accent-primary\/30 { border-color: color-mix(in srgb, var(--accent-primary) 30%, transparent); }
 .border-accent-primary\/40 { border-color: color-mix(in srgb, var(--accent-primary) 40%, transparent); }
 .hover\:border-accent-primary:hover { border-color: var(--accent-primary); }
@@ -54,17 +76,105 @@
 .focus\:ring-accent-primary:focus { --tw-ring-color: var(--accent-primary); }
 .focus\:ring-accent-secondary:focus { --tw-ring-color: var(--accent-secondary); }
 .focus\:ring-offset-bg-main:focus { --tw-ring-offset-color: var(--bg-main); }
-.group:hover .group-hover\:bg-accent-primary\/30 { background-color: color-mix(in srgb, var(--accent-primary) 30%, transparent); }
+.group:hover .group-hover\:bg-accent-primary\/30 { background-color: var(--accent-muted); }
 
+/* ========== Layout ========== */
+.page-container {
+  width: 100%;
+  max-width: 72rem;
+  margin-left: auto;
+  margin-right: auto;
+  padding-left: 1rem;
+  padding-right: 1rem;
+}
+@media (min-width: 640px) {
+  .page-container { padding-left: 1.5rem; padding-right: 1.5rem; }
+}
+
+.section-pad {
+  padding-top: var(--section-py);
+  padding-bottom: var(--section-py);
+}
+.section-pad-lg {
+  padding-top: var(--section-py-lg);
+  padding-bottom: var(--section-py-lg);
+}
+
+/* ========== Cards ========== */
+.card {
+  background-color: var(--bg-card);
+  border: 1px solid var(--border-default);
+  border-radius: var(--radius-xl);
+  transition: border-color 0.2s, background-color 0.2s;
+}
+.card:hover {
+  border-color: color-mix(in srgb, var(--accent-primary) 40%, transparent);
+}
+
+/* ========== Buttons ========== */
+.btn-primary {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  padding: 0.75rem 1.5rem;
+  font-weight: 600;
+  font-size: 0.9375rem;
+  color: var(--bg-main);
+  background-color: var(--accent-primary);
+  border-radius: 9999px;
+  transition: background-color 0.2s, color 0.2s;
+}
+.btn-primary:hover { background-color: var(--accent-light); color: var(--bg-main); }
+.btn-primary:focus-visible { outline: 2px solid var(--accent-primary); outline-offset: 2px; }
+
+.btn-secondary {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  padding: 0.75rem 1.5rem;
+  font-weight: 600;
+  font-size: 0.9375rem;
+  color: var(--text-main);
+  background-color: transparent;
+  border: 1px solid var(--border-strong);
+  border-radius: 9999px;
+  transition: border-color 0.2s, background-color 0.2s, color 0.2s;
+}
+.btn-secondary:hover { border-color: var(--accent-primary); background-color: var(--accent-muted); }
+
+/* ========== Typography ========== */
+.hero-title {
+  font-size: clamp(2rem, 5vw, 3.5rem);
+  font-weight: 700;
+  letter-spacing: -0.025em;
+  line-height: 1.15;
+  color: var(--text-main);
+}
+.section-title {
+  font-size: 1.875rem;
+  font-weight: 700;
+  color: var(--text-main);
+}
+.section-subtitle {
+  font-size: 1.125rem;
+  color: var(--text-secondary);
+  margin-top: 0.5rem;
+}
+
+/* ========== Body ========== */
 body {
   background: var(--bg-main);
   color: var(--text-main);
   font-family: var(--font-inter), system-ui, sans-serif;
+  -webkit-font-smoothing: antialiased;
 }
 
-/* Logo: light on dark background */
-.logo-theme-aware {
-  filter: invert(1);
+/* Focus visible for accessibility */
+*:focus-visible {
+  outline: 2px solid var(--accent-primary);
+  outline-offset: 2px;
 }
 
 /* Ticker animation */

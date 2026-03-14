@@ -14,24 +14,20 @@ export default async function NewspaperPage() {
 
   return (
     <div className="min-h-screen">
-      <section className="border-b border-accent-secondary/10 bg-bg-card/50 py-16 sm:py-20">
-        <div className="mx-auto max-w-6xl px-4 sm:px-6">
-          <h1 className="text-4xl font-bold tracking-tight text-text-main sm:text-5xl">
-            Newspaper
-          </h1>
-          <p className="mt-4 max-w-xl text-lg text-text-secondary">
+      <section className="section-pad border-b border-accent-secondary/10 bg-bg-card/40">
+        <div className="page-container">
+          <h1 className="hero-title">Newspaper</h1>
+          <p className="section-subtitle mt-4 max-w-xl">
             Latest news and articles from the campus. Read, comment, and stay updated.
           </p>
         </div>
       </section>
 
-      <section className="mx-auto max-w-6xl px-4 py-12 sm:px-6">
+      <section className="section-pad">
+        <div className="page-container">
         <div className="space-y-8">
           {posts.map((article) => (
-            <article
-              key={article.id}
-              className="overflow-hidden rounded-2xl border border-accent-secondary/20 bg-bg-card transition-colors hover:border-accent-primary/40"
-            >
+            <article key={article.id} className="card overflow-hidden">
               <Link href={`/newspaper/${article.slug}`} className="flex flex-col sm:flex-row">
                 <div className="h-48 w-full shrink-0 bg-bg-main sm:h-56 sm:w-72">
                   {/* eslint-disable-next-line @next/next/no-img-element */}
@@ -67,11 +63,12 @@ export default async function NewspaperPage() {
           ))}
         </div>
         {posts.length === 0 && (
-          <div className="rounded-2xl border border-accent-secondary/20 bg-bg-card py-16 text-center">
+          <div className="card py-16 text-center">
             <Newspaper className="mx-auto h-12 w-12 text-text-secondary" />
             <p className="mt-4 text-text-secondary">No articles yet. Check back soon.</p>
           </div>
         )}
+        </div>
       </section>
     </div>
   );

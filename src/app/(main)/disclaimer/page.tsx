@@ -1,8 +1,10 @@
 export default function DisclaimerPage() {
   return (
-    <div className="mx-auto max-w-3xl px-4 py-16 sm:px-6">
-      <h1 className="text-4xl font-bold text-text-main">Disclaimer</h1>
-      <p className="mt-2 text-sm text-text-secondary">
+    <div className="min-h-screen">
+      <section className="section-pad border-b border-accent-secondary/10 bg-bg-card/40">
+        <div className="page-container max-w-3xl">
+          <h1 className="hero-title">Disclaimer</h1>
+          <p className="section-subtitle mt-2 text-sm">
         Last updated: {new Date().toLocaleDateString("en-IN")}
       </p>
       <div className="mt-10 space-y-6 text-text-secondary">
@@ -21,7 +23,8 @@ export default function DisclaimerPage() {
           is at your own risk. For official academic or administrative matters, please contact 
           the institution directly.
         </p>
-      </div>
+        </div>
+      </section>
     </div>
   );
 }

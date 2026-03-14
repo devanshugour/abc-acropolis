@@ -97,8 +97,7 @@ export default async function DashboardPage() {
         </p>
       </div>
 
-      {/* Current user card */}
-      <section className="rounded-2xl border border-accent-secondary/20 bg-bg-card p-6">
+      <section className="card p-6">
         <h2 className="text-lg font-semibold text-text-main">Logged in as</h2>
         <div className="mt-3 flex flex-wrap items-center gap-4">
           <span className="font-medium text-accent-primary">{user.name ?? user.email}</span>
@@ -117,7 +116,7 @@ export default async function DashboardPage() {
             <Link
               key={label}
               href={href}
-              className="flex items-center gap-4 rounded-xl border border-accent-secondary/20 bg-bg-card p-5 transition-colors hover:border-accent-primary/40"
+              className="card flex items-center gap-4 p-5"
             >
               <div className="flex h-12 w-12 shrink-0 items-center justify-center rounded-xl bg-accent-primary/20 text-accent-primary">
                 <Icon className="h-6 w-6" />
@@ -132,7 +131,7 @@ export default async function DashboardPage() {
       </section>
 
       {/* Likes vs Dislikes bar chart */}
-      <section className="rounded-2xl border border-accent-secondary/20 bg-bg-card p-6">
+      <section className="card p-6">
         <h2 className="flex items-center gap-2 text-lg font-semibold text-text-main">
           <TrendingUp className="h-5 w-5 text-accent-primary" />
           Event engagement (likes vs dislikes)
@@ -170,7 +169,7 @@ export default async function DashboardPage() {
 
       {/* Two columns: Recent logins + Multiple sessions */}
       <div className="grid gap-8 lg:grid-cols-2">
-        <section className="rounded-2xl border border-accent-secondary/20 bg-bg-card p-6">
+        <section className="card p-6">
           <h2 className="flex items-center gap-2 text-lg font-semibold text-text-main">
             <LogIn className="h-5 w-5 text-accent-primary" />
             Recent logins
@@ -194,7 +193,7 @@ export default async function DashboardPage() {
           )}
         </section>
 
-        <section className="rounded-2xl border border-accent-secondary/20 bg-bg-card p-6">
+        <section className="card p-6">
           <h2 className="flex items-center gap-2 text-lg font-semibold text-text-main">
             <Users className="h-5 w-5 text-accent-primary" />
             Users with multiple sessions
@@ -220,7 +219,7 @@ export default async function DashboardPage() {
       </div>
 
       {/* Top events by likes */}
-      <section className="rounded-2xl border border-accent-secondary/20 bg-bg-card p-6">
+      <section className="card p-6">
         <h2 className="flex items-center gap-2 text-lg font-semibold text-text-main">
           <ThumbsUp className="h-5 w-5 text-accent-primary" />
           Top events by likes
@@ -260,28 +259,28 @@ export default async function DashboardPage() {
       <section className="grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
         <Link
           href="/dashboard/events"
-          className="flex items-center gap-4 rounded-xl border border-accent-secondary/20 bg-bg-card p-4 transition-colors hover:border-accent-primary/40"
+          className="card flex items-center gap-4 p-4"
         >
           <Calendar className="h-8 w-8 text-accent-primary" />
           <span className="font-medium text-text-main">Events</span>
         </Link>
         <Link
           href="/dashboard/newspaper"
-          className="flex items-center gap-4 rounded-xl border border-accent-secondary/20 bg-bg-card p-4 transition-colors hover:border-accent-primary/40"
+          className="card flex items-center gap-4 p-4"
         >
           <Newspaper className="h-8 w-8 text-accent-primary" />
           <span className="font-medium text-text-main">Newspaper</span>
         </Link>
         <Link
           href="/dashboard/gallery"
-          className="flex items-center gap-4 rounded-xl border border-accent-secondary/20 bg-bg-card p-4 transition-colors hover:border-accent-primary/40"
+          className="card flex items-center gap-4 p-4"
         >
           <ImageIcon className="h-8 w-8 text-accent-primary" />
           <span className="font-medium text-text-main">Gallery</span>
         </Link>
         <Link
           href="/dashboard/settings"
-          className="flex items-center gap-4 rounded-xl border border-accent-secondary/20 bg-bg-card p-4 transition-colors hover:border-accent-primary/40"
+          className="card flex items-center gap-4 p-4"
         >
           <Activity className="h-8 w-8 text-accent-primary" />
           <span className="font-medium text-text-main">Settings</span>

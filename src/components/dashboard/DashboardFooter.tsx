@@ -5,7 +5,7 @@ const SITE_NAME = "ABC Acropolis";
 export function DashboardFooter() {
   return (
     <footer className="mt-auto border-t border-accent-secondary/10 bg-bg-card py-4">
-      <div className="mx-auto flex max-w-6xl flex-col items-center justify-between gap-2 px-4 sm:flex-row sm:px-6">
+      <div className="page-container flex flex-col items-center justify-between gap-2 sm:flex-row">
         <p className="text-sm text-text-secondary">
           © {new Date().getFullYear()} {SITE_NAME} · Dashboard
         </p>

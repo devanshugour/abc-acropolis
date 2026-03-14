@@ -14,7 +14,7 @@ function SignInForm() {
       <button
         type="button"
         onClick={() => signIn("google", { callbackUrl })}
-        className="flex w-full items-center justify-center gap-2 rounded-full border border-accent-secondary/50 bg-bg-main py-3 font-medium text-text-main hover:bg-accent-primary/10"
+        className="btn-secondary w-full"
       >
         Continue with Google
       </button>
@@ -41,10 +41,7 @@ function SignInForm() {
           placeholder="Password (use: demo)"
           className="w-full rounded-lg border border-accent-secondary/30 bg-bg-main px-4 py-2 text-text-main placeholder:text-text-secondary"
         />
-        <button
-          type="submit"
-          className="w-full rounded-full bg-accent-primary py-3 font-semibold text-bg-main hover:bg-accent-light"
-        >
+        <button type="submit" className="btn-primary w-full">
           Sign in
         </button>
       </form>
@@ -54,16 +51,16 @@ function SignInForm() {
 
 export default function SignInPage() {
   return (
-    <div className="flex min-h-screen items-center justify-center bg-bg-main px-4">
-      <div className="w-full max-w-md rounded-2xl border border-accent-secondary/20 bg-bg-card p-8">
+    <div className="flex min-h-screen items-center justify-center bg-bg-main px-4 py-12">
+      <div className="card w-full max-w-md p-8">
         <h1 className="text-2xl font-bold text-text-main">Sign in</h1>
-        <p className="mt-2 text-sm text-text-secondary">
+        <p className="section-subtitle mt-2 text-sm">
           Use Google or demo credentials (email + password &quot;demo&quot;) to access the dashboard.
         </p>
-        <Suspense fallback={<div className="mt-6 h-32 animate-pulse rounded-lg bg-bg-main" />}>
+        <Suspense fallback={<div className="mt-6 h-32 animate-pulse rounded-xl bg-bg-main" />}>
           <SignInForm />
         </Suspense>
-        <Link href="/" className="mt-6 block text-center text-sm text-accent-primary hover:text-accent-light">
+        <Link href="/" className="btn-secondary mt-6 w-full justify-center">
           ← Back to home
         </Link>
       </div>

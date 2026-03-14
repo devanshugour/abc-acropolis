@@ -178,7 +178,7 @@ export function DashboardSidebar({
         )}
         <aside
           className={cn(
-            "fixed left-0 top-0 z-50 flex h-full w-64 flex-col border-r border-accent-secondary/20 bg-bg-card transition-transform duration-300 ease-out md:hidden",
+            "fixed left-0 top-0 z-50 flex h-full w-64 flex-col border-r border-accent-secondary/10 bg-bg-card transition-transform duration-300 ease-out md:hidden",
             open ? "translate-x-0" : "-translate-x-full"
           )}
           role="navigation"
@@ -204,7 +204,7 @@ export function DashboardSidebar({
   return (
     <aside
       className={cn(
-        "fixed left-0 top-0 z-40 flex h-screen w-[15.5rem] flex-col border-r border-accent-secondary/20 bg-bg-card transition-[width] duration-300 ease-out",
+        "fixed left-0 top-0 z-40 flex h-screen w-[15.5rem] flex-col border-r border-accent-secondary/10 bg-bg-card transition-[width] duration-300 ease-out",
         open ? "w-[15.5rem]" : "w-[4.25rem]"
       )}
       role="navigation"

@@ -49,19 +49,19 @@ export function Header({ className }: { className?: string }) {
     <>
       <header
         className={cn(
-          "sticky top-0 z-50 w-full border-b border-accent-secondary/10 bg-bg-main/95 backdrop-blur-sm",
+          "sticky top-0 z-50 w-full border-b border-accent-secondary/10 bg-bg-main/98 backdrop-blur-md",
           className
         )}
       >
-        <div className="mx-auto flex h-16 max-w-6xl items-center justify-between px-4 sm:px-6">
+        <div className="page-container flex h-16 items-center justify-between">
           <Link
             href="/"
-            className="text-xl font-bold tracking-tight text-text-main"
+            className="text-xl font-bold tracking-tight text-text-main transition-opacity hover:opacity-90"
           >
             {SITE_NAME}
           </Link>
 
-          <nav className="hidden items-center gap-1 md:flex">
+          <nav className="hidden items-center gap-0.5 md:flex" aria-label="Main">
             {NAV_ITEMS.map((item) => (
               <Link
                 key={item.href}
@@ -108,7 +108,7 @@ export function Header({ className }: { className?: string }) {
                 </button>
                 {userMenuOpen && (
                   <div
-                    className="absolute right-0 top-full z-50 mt-1 min-w-[180px] rounded-xl border border-accent-secondary/20 bg-bg-card py-1 shadow-lg"
+                    className="absolute right-0 top-full z-50 mt-2 min-w-[200px] rounded-xl border border-accent-secondary/20 bg-bg-card py-1.5 shadow-xl shadow-black/20"
                     role="menu"
                   >
                     {USER_MENU_ITEMS.map(({ label, href, icon: Icon }) => (

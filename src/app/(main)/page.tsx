@@ -72,28 +72,22 @@ export default async function HomePage() {
   return (
     <div className="min-h-screen">
       {/* Hero */}
-      <section className="relative border-b border-accent-secondary/10 bg-bg-card/50 py-20 sm:py-28">
-        <div className="mx-auto max-w-6xl px-4 sm:px-6">
+      <section className="section-pad-lg relative border-b border-accent-secondary/10 bg-bg-card/40">
+        <div className="page-container">
           <div className="text-center">
-            <h1 className="text-4xl font-bold tracking-tight text-text-main sm:text-5xl md:text-6xl">
+            <h1 className="hero-title">
               Welcome to <span className="text-accent-primary">ABC Acropolis</span>
             </h1>
-            <p className="mx-auto mt-6 max-w-2xl text-lg text-text-secondary sm:text-xl">
+            <p className="section-subtitle mx-auto mt-6 max-w-2xl">
               Your college cloud — one place for events, news, gallery, and community. 
               Discover, register, and participate in everything that shapes campus life.
             </p>
             <div className="mt-10 flex flex-wrap justify-center gap-4">
-              <Link
-                href="/events"
-                className="inline-flex items-center gap-2 rounded-full bg-accent-primary px-6 py-3 font-semibold text-bg-main transition-colors hover:bg-accent-light"
-              >
+              <Link href="/events" className="btn-primary">
                 View events
                 <ArrowRight className="h-4 w-4" />
               </Link>
-              <Link
-                href="/join-club"
-                className="inline-flex items-center gap-2 rounded-full border border-accent-secondary/50 bg-bg-main px-6 py-3 font-semibold text-text-main transition-colors hover:border-accent-primary hover:bg-accent-primary/10"
-              >
+              <Link href="/join-club" className="btn-secondary">
                 Join the club
                 <Users className="h-4 w-4" />
               </Link>
@@ -103,13 +97,13 @@ export default async function HomePage() {
       </section>
 
       {/* Stats */}
-      <section className="border-b border-accent-secondary/10 py-12">
-        <div className="mx-auto max-w-6xl px-4 sm:px-6">
-          <div className="grid gap-8 sm:grid-cols-3">
+      <section className="section-pad border-b border-accent-secondary/10">
+        <div className="page-container">
+          <div className="grid gap-6 sm:grid-cols-3">
             {stats.map(({ label, value, icon: Icon }) => (
               <div
                 key={label}
-                className="flex flex-col items-center rounded-2xl border border-accent-secondary/20 bg-bg-card py-8 text-center"
+                className="card flex flex-col items-center py-8 text-center"
               >
                 <Icon className="h-10 w-10 text-accent-primary" />
                 <p className="mt-3 text-3xl font-bold text-text-main">{value}</p>
@@ -121,12 +115,10 @@ export default async function HomePage() {
       </section>
 
       {/* What we do / Activities */}
-      <section className="border-b border-accent-secondary/10 py-16 sm:py-20">
-        <div className="mx-auto max-w-6xl px-4 sm:px-6">
-          <h2 className="text-center text-3xl font-bold text-text-main">
-            What we do
-          </h2>
-          <p className="mx-auto mt-4 max-w-2xl text-center text-text-secondary">
+      <section className="section-pad border-b border-accent-secondary/10">
+        <div className="page-container">
+          <h2 className="section-title text-center">What we do</h2>
+          <p className="section-subtitle mx-auto mt-4 max-w-2xl text-center">
             From tech fests to cultural nights, placements to clubs — we bring the campus together.
           </p>
           <div className="mt-12 grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
@@ -134,7 +126,7 @@ export default async function HomePage() {
               <Link
                 key={title}
                 href={href}
-                className="group flex flex-col rounded-2xl border border-accent-secondary/20 bg-bg-card p-6 transition-colors hover:border-accent-primary/40"
+                className="card group flex flex-col p-6"
               >
                 <Icon className="h-10 w-10 text-accent-primary" />
                 <h3 className="mt-4 font-semibold text-text-main group-hover:text-accent-primary">
@@ -154,15 +146,13 @@ export default async function HomePage() {
       </section>
 
       {/* Quick links */}
-      <section className="border-b border-accent-secondary/10 py-16">
-        <div className="mx-auto max-w-6xl px-4 sm:px-6">
-          <h2 className="text-center text-3xl font-bold text-text-main">
-            Explore
-          </h2>
+      <section className="section-pad border-b border-accent-secondary/10">
+        <div className="page-container">
+          <h2 className="section-title text-center">Explore</h2>
           <div className="mt-10 grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
             <Link
               href="/events"
-              className="flex flex-col items-center rounded-2xl border border-accent-secondary/20 bg-bg-card p-8 transition-colors hover:border-accent-primary/40"
+              className="card flex flex-col items-center p-8"
             >
               <Calendar className="h-12 w-12 text-accent-primary" />
               <h3 className="mt-4 font-semibold text-text-main">Events</h3>
@@ -172,7 +162,7 @@ export default async function HomePage() {
             </Link>
             <Link
               href="/gallery"
-              className="flex flex-col items-center rounded-2xl border border-accent-secondary/20 bg-bg-card p-8 transition-colors hover:border-accent-primary/40"
+              className="card flex flex-col items-center p-8"
             >
               <ImageIcon className="h-12 w-12 text-accent-primary" />
               <h3 className="mt-4 font-semibold text-text-main">Gallery</h3>
@@ -182,7 +172,7 @@ export default async function HomePage() {
             </Link>
             <Link
               href="/newspaper"
-              className="flex flex-col items-center rounded-2xl border border-accent-secondary/20 bg-bg-card p-8 transition-colors hover:border-accent-primary/40"
+              className="card flex flex-col items-center p-8"
             >
               <Newspaper className="h-12 w-12 text-accent-primary" />
               <h3 className="mt-4 font-semibold text-text-main">Newspaper</h3>
@@ -192,7 +182,7 @@ export default async function HomePage() {
             </Link>
             <Link
               href="/team"
-              className="flex flex-col items-center rounded-2xl border border-accent-secondary/20 bg-bg-card p-8 transition-colors hover:border-accent-primary/40"
+              className="card flex flex-col items-center p-8"
             >
               <Users className="h-12 w-12 text-accent-primary" />
               <h3 className="mt-4 font-semibold text-text-main">Team</h3>
@@ -205,14 +195,12 @@ export default async function HomePage() {
       </section>
 
       {/* Upcoming events */}
-      <section className="border-b border-accent-secondary/10 py-16 sm:py-20">
-        <div className="mx-auto max-w-6xl px-4 sm:px-6">
+      <section className="section-pad border-b border-accent-secondary/10">
+        <div className="page-container">
           <div className="flex flex-col items-start justify-between gap-4 sm:flex-row sm:items-center">
             <div>
-              <h2 className="text-3xl font-bold text-text-main">
-                Upcoming events
-              </h2>
-              <p className="mt-2 text-text-secondary">
+              <h2 className="section-title">Upcoming events</h2>
+              <p className="section-subtitle mt-2">
                 Register and be part of the next big thing on campus.
               </p>
             </div>
@@ -229,7 +217,7 @@ export default async function HomePage() {
               <Link
                 key={evt.id}
                 href={`/events/${evt.slug}`}
-                className="group overflow-hidden rounded-2xl border border-accent-secondary/20 bg-bg-card transition-colors hover:border-accent-primary/40"
+                className="card group overflow-hidden"
               >
                 <div className="aspect-video w-full bg-bg-main">
                   {/* eslint-disable-next-line @next/next/no-img-element */}
@@ -261,11 +249,9 @@ export default async function HomePage() {
 
       {/* Past events / Winners */}
       {publishedEvents.length > 0 && (
-        <section className="border-b border-accent-secondary/10 py-16">
-          <div className="mx-auto max-w-6xl px-4 sm:px-6">
-            <h2 className="text-3xl font-bold text-text-main">
-              Recent events
-            </h2>
+        <section className="section-pad border-b border-accent-secondary/10">
+          <div className="page-container">
+            <h2 className="section-title">Recent events</h2>
             <p className="mt-2 text-text-secondary">
               Look back at completed events, participants, and highlights.
             </p>
@@ -292,28 +278,16 @@ export default async function HomePage() {
       )}
 
       {/* CTA */}
-      <section className="py-20 sm:py-24">
-        <div className="mx-auto max-w-6xl px-4 sm:px-6">
-          <div className="rounded-3xl border border-accent-secondary/20 bg-bg-card px-6 py-16 text-center sm:px-12">
-            <h2 className="text-2xl font-bold text-text-main sm:text-3xl">
-              Ready to get involved?
-            </h2>
-            <p className="mx-auto mt-4 max-w-xl text-text-secondary">
+      <section className="section-pad-lg">
+        <div className="page-container">
+          <div className="card rounded-2xl px-6 py-16 text-center sm:px-12">
+            <h2 className="section-title sm:text-3xl">Ready to get involved?</h2>
+            <p className="section-subtitle mx-auto mt-4 max-w-xl">
               Join the club, volunteer for events, or stay in the loop with news and gallery updates.
             </p>
             <div className="mt-8 flex flex-wrap justify-center gap-4">
-              <Link
-                href="/join-club"
-                className="rounded-full bg-accent-primary px-6 py-3 font-semibold text-bg-main transition-colors hover:bg-accent-light"
-              >
-                Join Club
-              </Link>
-              <Link
-                href="/contact"
-                className="rounded-full border border-accent-secondary/50 px-6 py-3 font-semibold text-text-main transition-colors hover:border-accent-primary hover:bg-accent-primary/10"
-              >
-                Contact us
-              </Link>
+              <Link href="/join-club" className="btn-primary">Join Club</Link>
+              <Link href="/contact" className="btn-secondary">Contact us</Link>
             </div>
           </div>
         </div>

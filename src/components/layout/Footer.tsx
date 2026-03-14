@@ -20,11 +20,11 @@ export function Footer({ className }: { className?: string }) {
         className
       )}
     >
-      <div className="mx-auto max-w-6xl px-4 sm:px-6">
+      <div className="page-container">
         <div className="grid gap-10 sm:grid-cols-2 lg:grid-cols-5">
           <div className="lg:col-span-2">
             <h3 className="text-lg font-semibold text-text-main">{SITE_NAME}</h3>
-            <p className="mt-3 max-w-sm text-sm text-text-secondary">
+            <p className="mt-3 max-w-sm text-sm leading-relaxed text-text-secondary">
               Your College Cloud — events, gallery, newspaper, team, and community. 
               Part of Acropolis Group of Institutions. Stay connected, participate, and grow.
             </p>
@@ -81,7 +81,7 @@ export function Footer({ className }: { className?: string }) {
             </ul>
           </div>
         </div>
-        <div className="mt-12 border-t border-accent-secondary/20 pt-8">
+        <div className="mt-12 border-t border-accent-secondary/10 pt-8">
           <p className="text-center text-sm text-text-secondary">
             © {new Date().getFullYear()} {SITE_NAME}. All rights reserved.
           </p>

@@ -14,32 +14,35 @@ export default function JoinClubPage() {
 
   if (submitted) {
     return (
-      <div className="mx-auto max-w-6xl px-4 py-12 sm:px-6">
-        <div className="mx-auto max-w-md rounded-2xl border border-accent-secondary/20 bg-bg-card p-8 text-center">
-          <h2 className="text-xl font-semibold text-accent-primary">Thank you!</h2>
-          <p className="mt-2 text-text-secondary">
-            We've received your interest. Our team will get in touch soon.
-          </p>
-          <Link
-            href="/"
-            className="mt-6 inline-block rounded-full bg-accent-primary px-6 py-2 font-semibold text-bg-main hover:bg-accent-light"
-          >
-            Back to Home
-          </Link>
+      <div className="section-pad">
+        <div className="page-container">
+          <div className="card mx-auto max-w-md p-8 text-center">
+            <h2 className="text-xl font-semibold text-accent-primary">Thank you!</h2>
+            <p className="section-subtitle mt-2">
+              We've received your interest. Our team will get in touch soon.
+            </p>
+            <Link href="/" className="btn-primary mt-6">
+              Back to Home
+            </Link>
+          </div>
         </div>
       </div>
     );
   }
 
   return (
-    <div className="mx-auto max-w-6xl px-4 py-12 sm:px-6">
-      <h1 className="text-4xl font-bold text-text-main">Join Club</h1>
-      <p className="mt-4 text-lg text-text-secondary">
-        Fill in your details and we'll add you to the club.
-      </p>
+    <div className="min-h-screen">
+      <section className="section-pad border-b border-accent-secondary/10 bg-bg-card/40">
+        <div className="page-container">
+          <h1 className="hero-title">Join Club</h1>
+          <p className="section-subtitle mt-4">Fill in your details and we'll add you to the club.</p>
+        </div>
+      </section>
+      <section className="section-pad">
+        <div className="page-container">
       <form
         onSubmit={handleSubmit}
-        className="mt-10 max-w-xl space-y-4 rounded-2xl border border-accent-secondary/20 bg-bg-card p-6"
+        className="card max-w-xl space-y-4 p-6"
       >
         <div>
           <label htmlFor="j-name" className="block text-sm font-medium text-text-main">
@@ -84,13 +87,12 @@ export default function JoinClubPage() {
             <option value="other">Other</option>
           </select>
         </div>
-        <button
-          type="submit"
-          className="w-full rounded-full bg-accent-primary py-3 font-semibold text-bg-main hover:bg-accent-light"
-        >
+        <button type="submit" className="btn-primary w-full">
           Submit
         </button>
       </form>
+        </div>
+      </section>
     </div>
   );
 }

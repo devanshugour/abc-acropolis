@@ -41,18 +41,17 @@ export default function GalleryPage() {
 
   return (
     <div className="min-h-screen">
-      <section className="border-b border-accent-secondary/10 bg-bg-card/50 py-16 sm:py-20">
-        <div className="mx-auto max-w-6xl px-4 sm:px-6">
-          <h1 className="text-4xl font-bold tracking-tight text-text-main sm:text-5xl">
-            Gallery
-          </h1>
-          <p className="mt-4 max-w-xl text-lg text-text-secondary">
+      <section className="section-pad border-b border-accent-secondary/10 bg-bg-card/40">
+        <div className="page-container">
+          <h1 className="hero-title">Gallery</h1>
+          <p className="section-subtitle mt-4 max-w-xl">
             Photos from campus, events, workshops, and fests. Click any image to view full size and browse.
           </p>
         </div>
       </section>
 
-      <section className="mx-auto max-w-6xl px-4 py-10 sm:px-6">
+      <section className="section-pad">
+        <div className="page-container">
         <div className="flex flex-wrap gap-2">
           <button
             type="button"
@@ -86,7 +85,7 @@ export default function GalleryPage() {
               key={img.id}
               type="button"
               onClick={() => openLightbox(index)}
-              className="group block w-full overflow-hidden rounded-xl border border-accent-secondary/20 bg-bg-card text-left transition-colors hover:border-accent-primary/40"
+              className="card group block w-full overflow-hidden rounded-xl text-left"
             >
               <div className="aspect-[3/2] w-full bg-bg-main">
                 {/* eslint-disable-next-line @next/next/no-img-element */}

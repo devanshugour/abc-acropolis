@@ -38,7 +38,7 @@ export function DashboardHeader({
   const breadcrumb = getBreadcrumb(pathname);
 
   return (
-    <header className="sticky top-0 z-30 flex h-14 shrink-0 items-center justify-between gap-4 border-b border-accent-secondary/10 bg-bg-main/95 px-4 backdrop-blur-sm sm:px-6">
+    <header className="sticky top-0 z-30 flex h-14 shrink-0 items-center justify-between gap-4 border-b border-accent-secondary/10 bg-bg-main/98 px-4 backdrop-blur-md sm:px-6">
       <div className="flex min-w-0 flex-1 items-center gap-3">
         <button
           type="button"

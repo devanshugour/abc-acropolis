@@ -14,24 +14,22 @@ import {
 export default function AboutPage() {
   return (
     <div className="min-h-screen">
-      {/* Hero */}
-      <section className="border-b border-accent-secondary/10 bg-bg-card/50 py-16 sm:py-24">
-        <div className="mx-auto max-w-6xl px-4 sm:px-6">
-          <h1 className="text-4xl font-bold tracking-tight text-text-main sm:text-5xl">
+      <section className="section-pad-lg border-b border-accent-secondary/10 bg-bg-card/40">
+        <div className="page-container">
+          <h1 className="hero-title">
             About <span className="text-accent-primary">ABC Acropolis</span>
           </h1>
-          <p className="mt-6 max-w-2xl text-lg text-text-secondary">
+          <p className="section-subtitle mt-6 max-w-2xl">
             Your college cloud — a single place for events, news, gallery, and community. 
             We bring together students, faculty, and clubs under one platform.
           </p>
         </div>
       </section>
 
-      {/* Mission & vision */}
-      <section className="border-b border-accent-secondary/10 py-16">
-        <div className="mx-auto max-w-6xl px-4 sm:px-6">
-          <div className="grid gap-10 lg:grid-cols-2">
-            <div className="rounded-2xl border border-accent-secondary/20 bg-bg-card p-8">
+      <section className="section-pad border-b border-accent-secondary/10">
+        <div className="page-container">
+          <div className="grid gap-8 lg:grid-cols-2">
+            <div className="card p-8">
               <Target className="h-10 w-10 text-accent-primary" />
               <h2 className="mt-4 text-xl font-semibold text-text-main">Our mission</h2>
               <p className="mt-3 text-text-secondary">
@@ -40,7 +38,7 @@ export default function AboutPage() {
                 participation, and growth — from tech fests to cultural nights, placements to clubs.
               </p>
             </div>
-            <div className="rounded-2xl border border-accent-secondary/20 bg-bg-card p-8">
+            <div className="card p-8">
               <BookOpen className="h-10 w-10 text-accent-primary" />
               <h2 className="mt-4 text-xl font-semibold text-text-main">Our vision</h2>
               <p className="mt-3 text-text-secondary">
@@ -53,33 +51,30 @@ export default function AboutPage() {
         </div>
       </section>
 
-      {/* Acropolis context */}
-      <section className="border-b border-accent-secondary/10 py-16">
-        <div className="mx-auto max-w-6xl px-4 sm:px-6">
-          <h2 className="text-3xl font-bold text-text-main">
-            Part of Acropolis Group of Institutions
-          </h2>
-          <p className="mt-4 max-w-3xl text-text-secondary">
+      <section className="section-pad border-b border-accent-secondary/10">
+        <div className="page-container">
+          <h2 className="section-title">Part of Acropolis Group of Institutions</h2>
+          <p className="section-subtitle mt-4 max-w-3xl">
             Acropolis Group of Institutions is dedicated to fostering excellence across engineering, 
             management, pharmacy, and computer applications. With a comprehensive range of institutes 
             and a strong focus on quality education, the group empowers students for a successful future.
           </p>
           <div className="mt-10 grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
-            <div className="rounded-xl border border-accent-secondary/20 bg-bg-card p-6">
+            <div className="card rounded-xl p-6">
               <GraduationCap className="h-8 w-8 text-accent-primary" />
               <h3 className="mt-3 font-semibold text-text-main">Education</h3>
               <p className="mt-1 text-sm text-text-secondary">
                 Exceptional courses in engineering, management, pharmacy, and computer applications.
               </p>
             </div>
-            <div className="rounded-xl border border-accent-secondary/20 bg-bg-card p-6">
+            <div className="card rounded-xl p-6">
               <Users className="h-8 w-8 text-accent-primary" />
               <h3 className="mt-3 font-semibold text-text-main">Clubs & cells</h3>
               <p className="mt-1 text-sm text-text-secondary">
                 NSS, Yavnika Hobby Club, Women Cell, Sports and Cultural, E-Cell, Acrocare, IIPC.
               </p>
             </div>
-            <div className="rounded-xl border border-accent-secondary/20 bg-bg-card p-6">
+            <div className="card rounded-xl p-6">
               <Award className="h-8 w-8 text-accent-primary" />
               <h3 className="mt-3 font-semibold text-text-main">Career development</h3>
               <p className="mt-1 text-sm text-text-secondary">
@@ -90,12 +85,9 @@ export default function AboutPage() {
         </div>
       </section>
 
-      {/* What we offer */}
-      <section className="border-b border-accent-secondary/10 py-16">
-        <div className="mx-auto max-w-6xl px-4 sm:px-6">
-          <h2 className="text-3xl font-bold text-text-main">
-            What we offer on ABC Acropolis
-          </h2>
+      <section className="section-pad border-b border-accent-secondary/10">
+        <div className="page-container">
+          <h2 className="section-title">What we offer on ABC Acropolis</h2>
           <ul className="mt-8 space-y-4 text-text-secondary">
             <li className="flex gap-3">
               <span className="text-accent-primary">·</span>
@@ -119,10 +111,7 @@ export default function AboutPage() {
             </li>
           </ul>
           <div className="mt-10">
-            <Link
-              href="/events"
-              className="inline-flex items-center gap-2 font-semibold text-accent-primary hover:text-accent-light"
-            >
+            <Link href="/events" className="btn-secondary">
               Explore events
               <ArrowRight className="h-4 w-4" />
             </Link>
@@ -130,12 +119,9 @@ export default function AboutPage() {
         </div>
       </section>
 
-      {/* Contact / Address */}
-      <section className="py-16">
-        <div className="mx-auto max-w-6xl px-4 sm:px-6">
-          <h2 className="text-3xl font-bold text-text-main">
-            Get in touch
-          </h2>
+      <section className="section-pad">
+        <div className="page-container">
+          <h2 className="section-title">Get in touch</h2>
           <div className="mt-8 flex flex-col gap-6 sm:flex-row sm:gap-10">
             <div className="flex items-start gap-3 text-text-secondary">
               <MapPin className="h-5 w-5 shrink-0 text-accent-primary" />
@@ -164,10 +150,7 @@ export default function AboutPage() {
               </div>
             </div>
           </div>
-          <Link
-            href="/contact"
-            className="mt-8 inline-flex items-center gap-2 rounded-full bg-accent-primary px-5 py-2.5 font-semibold text-bg-main transition-colors hover:bg-accent-light"
-          >
+          <Link href="/contact" className="btn-primary mt-8">
             Contact form
             <ArrowRight className="h-4 w-4" />
           </Link>

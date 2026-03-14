@@ -13,7 +13,7 @@ export function SessionActivityList({ activities }: { activities: Activity[] }) 
   if (activities.length === 0) return null;
 
   return (
-    <section className="mt-6 rounded-2xl border border-accent-secondary/20 bg-bg-card p-6">
+    <section className="card mt-6 p-6">
       <h2 className="flex items-center gap-2 text-lg font-semibold text-text-main">
         <Clock className="h-5 w-5 text-accent-primary" />
         Session activity

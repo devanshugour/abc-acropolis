@@ -9,18 +9,16 @@ export default function ContactPage() {
 
   return (
     <div className="min-h-screen">
-      <section className="border-b border-accent-secondary/10 bg-bg-card/50 py-20 sm:py-28">
-        <div className="mx-auto max-w-6xl px-4 text-center sm:px-6">
-          <h1 className="text-4xl font-bold tracking-tight text-text-main sm:text-5xl">
-            Contact Us
-          </h1>
-          <p className="mx-auto mt-6 max-w-2xl text-lg text-text-secondary">
+      <section className="section-pad-lg border-b border-accent-secondary/10 bg-bg-card/40">
+        <div className="page-container text-center">
+          <h1 className="hero-title">Contact Us</h1>
+          <p className="section-subtitle mx-auto mt-6 max-w-2xl">
             Have a question, feedback, or want to get involved? We’d love to hear from you.
           </p>
           <button
             type="button"
             onClick={() => formRef.current?.scrollIntoView({ behavior: "smooth" })}
-            className="mt-8 inline-flex items-center gap-2 rounded-full bg-accent-primary px-6 py-3 font-semibold text-bg-main transition-colors hover:bg-accent-light"
+            className="btn-primary mt-8"
           >
             <Send className="h-4 w-4" />
             Send a message
@@ -28,10 +26,11 @@ export default function ContactPage() {
         </div>
       </section>
 
-      <section className="mx-auto max-w-6xl px-4 py-16 sm:px-6">
+      <section className="section-pad">
+        <div className="page-container">
         <div className="grid gap-12 lg:grid-cols-2">
           <div>
-            <h2 className="text-2xl font-bold text-text-main">Get in touch</h2>
+            <h2 className="section-title">Get in touch</h2>
             <p className="mt-3 text-text-secondary">
               Reach out for event enquiries, partnerships, or general feedback. 
               We typically respond within 1–2 business days.
@@ -71,7 +70,7 @@ export default function ContactPage() {
               </div>
             </div>
           </div>
-          <div ref={formRef} className="rounded-2xl border border-accent-secondary/20 bg-bg-card p-6">
+          <div ref={formRef} className="card p-6">
             <h2 className="text-xl font-semibold text-text-main">Send a message</h2>
             <p className="mt-2 text-sm text-text-secondary">
               Fill out the form below and we’ll get back to you.
